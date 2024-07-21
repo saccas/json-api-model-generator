@@ -1,0 +1,14 @@
+{
+    "require": {
+        "symfony/console": "^7.1",
+        "symfony/yaml": "^7.1",
+        "symfony/config": "^7.1",
+        "symfony/dependency-injection": "^7.1",
+        "nette/php-generator": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SacCas\\JsonApiClientGenerator\\": "JsonApiClientGenerator/"
+        }
+    }
+}

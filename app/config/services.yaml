@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  SacCas\JsonApiClientGenerator\:
+    resource: '../JsonApiClientGenerator/'
+    exclude: '../JsonApiClientGenerator/{DependencyInjection,Entity,Tests,Kernel.php}'
+
+  SacCas\JsonApiClientGenerator\Command\GenerateCommand:
+    public: true
