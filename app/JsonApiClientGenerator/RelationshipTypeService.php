@@ -1,18 +1,19 @@
 <?php
 
-namespace SacCas\JsonApiClientGenerator;
+namespace Saccas\JsonApiClientGenerator;
 
 class RelationshipTypeService
 {
     public function __construct(
-        protected array $mapping,
+        protected array $modelSchemaConfiguration,
     ) {
     }
 
-    public function getTypeForRelationship(string $schema, string $relationshipName, array $relationShipSchema): string
+    public function getSchemaForRelationship(string $schema, string $relationshipName, array $relationShipSchema): string
     {
-        if (isset($this->mapping[$schema][$relationshipName])) {
-            return $this->mapping[$schema][$relationshipName];
+        $override = $this->modelSchemaConfiguration[$schema]['relationships'][$relationshipName]['targetSchema'] ?? null;
+        if (isset($override)) {
+            return $override;
         }
 
         if ($relationShipSchema['properties']['data']['$ref'] === 'relationshipToMany') {

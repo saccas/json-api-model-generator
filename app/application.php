@@ -12,6 +12,6 @@ $loader->load('config/services.yaml');
 $container->compile();
 
 $application = new Application();
-$command = $container->get('SacCas\JsonApiClientGenerator\Command\GenerateCommand');
+$command = $container->get('Saccas\JsonApiClientGenerator\Command\GenerateCommand');
 $application->add($command);
 $application->run();

@@ -1,6 +1,6 @@
 <?php
 
-namespace SacCas\JsonApiClientGenerator;
+namespace Saccas\JsonApiClientGenerator;
 
 use Symfony\Component\String\UnicodeString;
 

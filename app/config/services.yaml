@@ -3,9 +3,12 @@ services:
     autowire: true
     autoconfigure: true
 
-  SacCas\JsonApiClientGenerator\:
+  Symfony\Component\Filesystem\Filesystem:
+    shared: false
+
+  Saccas\JsonApiClientGenerator\:
     resource: '../JsonApiClientGenerator/'
     exclude: '../JsonApiClientGenerator/{DependencyInjection,Entity,Tests,Kernel.php}'
 
-  SacCas\JsonApiClientGenerator\Command\GenerateCommand:
+  Saccas\JsonApiClientGenerator\Command\GenerateCommand:
     public: true
