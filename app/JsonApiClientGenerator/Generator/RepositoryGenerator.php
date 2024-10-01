@@ -30,7 +30,7 @@ class RepositoryGenerator
         $className = $modelClassName . 'Repository';
         $class = $modelNamespace->addClass($className);
         $class->setExtends('\Saccas\JsonApiModel\JsonApiRepository');
-        $class->addComment("@implements \Saccas\JsonApiModel\JsonApiRepository<{$modelClassNameQualified}>");
+        $class->addComment("@extends \Saccas\JsonApiModel\JsonApiRepository<{$modelClassNameQualified}>");
 
         $endpoint = $modelSchemaConfiguration[$modelSchemaName]['endpoint'] ?? "/api/{$modelSchemaName}";
         $endpointProperty = $class->addProperty('endpoint', $endpoint);
