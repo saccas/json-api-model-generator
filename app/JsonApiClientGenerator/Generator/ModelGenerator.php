@@ -60,8 +60,8 @@ class ModelGenerator
                 $methodName = 'get' . ucfirst($this->namingService->getPropertyName($relationShipName));
                 $method = $class->addMethod($methodName);
                 if ($pluralRelationship) {
-                    $method->setComment('@return ?\Illuminate\Support\Collection<' . $returnTypePhpSingle . '>');
-                    $method->setReturnType('?\Illuminate\Support\Collection');
+                    $method->setComment('@return \Illuminate\Support\Collection<' . $returnTypePhpSingle . '>');
+                    $method->setReturnType('\Illuminate\Support\Collection');
                     $method->setBody("return \$this->getRelationMultiple('{$relationShipName}', {$returnTypePhpSingle}::class);");
                 } else {
                     $method->setReturnType('?' . $returnTypePhpSingle);
