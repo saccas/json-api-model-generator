@@ -12,7 +12,7 @@ class TypeService
     {
         return match ($apiType) {
             'integer' => \Nette\PhpGenerator\Type::Int,
-            'number' => \Nette\PhpGenerator\Type::Int,
+            'number' => \Nette\PhpGenerator\Type::Float,
             'boolean' => \Nette\PhpGenerator\Type::Bool,
             'string' => match ($format) {
                 'date' => self::DATE_TIME,
